@@ -101,7 +101,7 @@ The [Examples](./Examples) directory has simple example use with plots.
 
 ## Data files
 
-`iri2016/iri2016/data/index/{apf107,ig_rz}.dat` are
+`iri2016/src/iri2016/data/index/{apf107,ig_rz}.dat` are
 [regularly updated](http://irimodel.org/indices/).
 Currently we don't auto-update those.
 
