@@ -31,7 +31,10 @@ Nalt = fix((altkm_range(2) - altkm_range(1)) / altkm_range(3)) + 1;
 arr = cell2mat(textscan(dat, '%f %f %f %f %f %f %f %f %f %f %f %f', Nalt, ...
   'CollectOutput', true, 'ReturnOnError', false));
 
+iono.time = time;
 iono.altkm = arr(:,1);
+iono.lat  = glat;
+iono.lon  = glon;
 iono.Ne = arr(:,2);
 iono.Tn = arr(:,3);
 iono.Ti = arr(:,4);
@@ -49,12 +52,16 @@ arr = cell2mat(textscan(dat, '%f', 'HeaderLines',Nalt));
 % by convention of msis
 arr(arr <= 0) = nan;
 
-iono.NmF2=arr(1);
-iono.hmF2=arr(2);
-iono.NmF1=arr(3);
-iono.hmF1=arr(4);
-iono.NmE=arr(5);
-iono.hmE=arr(6);
-iono.TECtotal=arr(37);
+iono.NmF2 = arr(1);
+iono.hmF2 = arr(2);
+iono.NmF1 = arr(3);
+iono.hmF1 = arr(4);
+iono.NmE  = arr(5);
+iono.hmE  = arr(6);
+iono.f107 = arr(41);
+iono.ap   = arr(52);
+iono.TECtotal =arr(37);
+iono.EqVertIonDrift = arr(44);
+iono.foF2 = arr(100);
 
 end
