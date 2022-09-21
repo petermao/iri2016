@@ -73,6 +73,18 @@ If you have errors about building on the first run, ensure that your Fortran com
 
 [irisub.for](./iri2016/src/irisub.for) has a few dozen logical flags stored in variable JF. To reconfigure those flags, edit [iri2016_driver.f90](./iri2016/src/iri2016_driver.f90) and recompile iri2016_driver.exe.
 
+reinstall the python package
+```
+cd iri2016
+pip install -e ./
+```
+
+then force the rebuild in python
+```
+>>> import iri2016 as IRI
+>>> IRI.build.build()
+```
+
 ### Matlab
 
 IRI2016 is readily accessible from Matlab.
